@@ -338,7 +338,7 @@
 
   function boot() {
     bind();
-    fetchJSON("manifest.json", null, 12000).then(function (m) {
+    fetchJSON("manifest.json?v=" + Date.now(), null, 12000).then(function (m) {
       S.manifest = m;
       if (m && typeof m.count === "number") el.pool.textContent = String(m.count);
 
